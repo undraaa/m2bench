@@ -16,7 +16,7 @@ def document_process():
      #drug_df['drug_id']=drug_df['drug_id'].str.replace("DB",'', regex=True).astype(int)
      drug_df_seed = drug_df[['drug_id', 'drug_name','targets','adverse_effect_list','drug_interaction_list' ]]
 
-     drugIdName = drug_df[['drug_id','drug_name']].to_csv(r'drugs.csv',index=False)  # making drug_id, drug_name file for Prescription table data
+     drugIdName = drug_df[['drug_id','drug_name']].to_csv(r'../../healthcare/table/drugs.csv',index=False)  # making drug_id, drug_name file for Prescription table data
 
      adverse_effect_unwanted_keys = ["route", "regions", "evidence_type", "incidences","dose_form","dose_strength","age_groups","excluded_age_groups","event","admin",
      "timeline","usage","patient_characteristics","excluded_patient_characteristics","associated_with","with_therapy","with_drugs","with_categories"]
@@ -71,7 +71,7 @@ def document_process():
 
      #print("----TARGET DONE-----")
 
-     drug_json = drug_df_seed.to_json('drug.json', orient="records" ,lines=True) 
+     drug_json = drug_df_seed.to_json('../../healthcare/json/drug.json', orient="records" ,lines=True) 
 
      print("----- drug.json DONE -----")
      print("----- DOCUMENT DATA ARRANGEMENT DONE -----")
