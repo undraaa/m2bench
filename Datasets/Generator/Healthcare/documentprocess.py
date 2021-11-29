@@ -13,7 +13,7 @@ def document_process():
      drug_df.rename(columns = {'structured_adverse_effects' : 'adverse_effect_list'}, inplace = True)
      drug_df.rename(columns = {'structured_drug_interactions' : 'drug_interaction_list'}, inplace = True)
      
-     #drug_df['drug_id']=drug_df['drug_id'].str.replace("DB",'', regex=True).astype(int)
+     drug_df['drug_id']=drug_df['drug_id'].str.replace("DB",'', regex=True).astype(int)
      drug_df_seed = drug_df[['drug_id', 'drug_name','targets','adverse_effect_list','drug_interaction_list' ]]
 
      drugIdName = drug_df[['drug_id','drug_name']].to_csv(r'drugs.csv',index=False)  # making drug_id, drug_name file for Prescription table data
